@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notas Rolling</title>
+</head>
+<body>
+
+<script>
+
+//Declaro un array con las notas de los alumnos.
+var notasAlumnos = [8,3,5,8,10,2,6,7,1,9];
+//Contador de alumnos aprobados
+let totalAprobados = 0;
+var totalDesaprobados = 0;
+//Promedios
+var promedioAprobados = 0;
+var promedioDesaprobados = 0;
+//Nota mas alta
+var max = 0;
+//Nota mas baja
+var min = 0;
+//Listado notas de alumnos aprobados
+var notasAlumnosAprobados = [];
+//Listado notas de alumnos desaprobados
+var notasAlumnosDesaprobados = [];
+
+for(var i=0; i<notasAlumnos.length; i++){
+
+    //Que alumno paso el examen
+    if(notasAlumnos[i] > 5){
+    console.log("Aprobado");
+    totalAprobados = totalAprobados + 1;
+    notasAlumnosAprobados.push(notasAlumnos[i]);
+    }
+    else{
+    console.log("Desaprobado");    
+    totalDesaprobados = totalDesaprobados + 1;
+    notasAlumnosDesaprobados.push(notasAlumnos[i]);       
+    }
+    
+
+}
+
+console.log("El total de aprobados es:" + totalAprobados);
+console.log("El total de desaprobados es:" + totalDesaprobados);
+
+//Calculo del promedio
+
+promedioAprobados = (totalAprobados * 100) / notasAlumnos.length;
+console.log("El promedio de aprobados es" + promedioAprobados);
+
+promedioDesaprobados = (totalDesaprobados * 100) / notasAlumnos.length;
+console.log("El promedio de desaprobados es" + promedioDesaprobados);
+
+//Nota maxima
+max = Math.max.apply(null, notasAlumnos);
+console.log("La nota  mas alta es:" + max);
+
+//Nota minima
+min = Math.min.apply(null, notasAlumnos);
+console.log("La nota  mas alta es:" + min);
+
+//Notas alumnos aprobados
+console.log(notasAlumnosAprobados);
+//Notas alumnos desaprobados
+console.log(notasAlumnosDesaprobados);
+</script>
+</body>
+</html>
